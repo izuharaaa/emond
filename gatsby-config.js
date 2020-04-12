@@ -72,7 +72,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/emond-icon.png`,
+        icon: `src/images/emond-icon.png`,
       },
     },
     `gatsby-plugin-react-helmet`,

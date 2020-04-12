@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Link } from "gatsby"
+import SEO from "../components/seo"
 
 import Layout from '../components/layout'
 
@@ -36,6 +37,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
+      <SEO title="TOP PAGE" />
       <main>
         <img src={`../../images/parallaxText.png`} alt="" className="parallaxText" />
         <div className="topKeyvisual">

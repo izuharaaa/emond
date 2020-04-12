@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Link } from "gatsby"
+import SEO from "../components/seo"
 
 import Work from '../components/work'
 import workStyles from '../components/work.module.scss'
@@ -39,6 +40,7 @@ class IndexPage extends Component {
     };
     return (
       <Work>
+      <SEO title="居酒屋ハッシュタグ梅田本店" />
       <main>
         <div className={workStyles.workSliderWrapper}>
         <Slider 

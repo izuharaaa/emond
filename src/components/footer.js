@@ -21,6 +21,7 @@ const Footer = () => {
         <div className="container">
           <h3>CONTACT US</h3>
           <form name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact" />
             <div className="field-wrapper">
               <div className="mb20-tb">
                 <div className="form-control">

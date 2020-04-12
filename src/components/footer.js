@@ -20,25 +20,25 @@ const Footer = () => {
       <section className="top-section contact-section">
         <div className="container">
           <h3>CONTACT US</h3>
-          <form>
+          <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
             <div className="field-wrapper">
               <div className="mb20-tb">
                 <div className="form-control">
                   <div className="form-field-name">お名前</div>
-                  <input type="text" className="form-text-field" />
+                  <input type="text" required name="name" className="form-text-field" />
                 </div>
               </div>
               <div>
                 <div className="form-control">
                   <div className="form-field-name">メールアドレス</div>
-                  <input type="email" className="form-text-field" />
+                  <input type="email" required name="email" className="form-text-field" />
                 </div>
               </div>
             </div>
             <div className="mb50 mb20-tb">
               <div className="form-control">
                 <div className="form-field-name">お問い合わせ内容</div>
-                <textarea className="form-textarea"></textarea>
+                <textarea required name="message" className="form-textarea"></textarea>
               </div>
             </div>
             <div className="center-text">

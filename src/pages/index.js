@@ -37,6 +37,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <main>
+        <img src={`../../images/parallaxText.png`} alt="" className="parallaxText" />
         <div className="topKeyvisual">
           <div className="topKeyvisualContainer">
             <div className="topKeyText">デザイン通じて<br />別の可能性を作る</div>

@@ -11,6 +11,7 @@ body {
 
 .parallaxText {
   width: 380px;
+  position: absolute;
 
   @media only screen and (max-width: $screen-tb) {
     width: 175px;

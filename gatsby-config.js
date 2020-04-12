@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `EMOND WEBSITE`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Nagano Wataru`,
+      summary: `Emond Website`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `Emond Website`,
+    siteUrl: `https://emond.jp/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `emond`,
     },
   },
   plugins: [

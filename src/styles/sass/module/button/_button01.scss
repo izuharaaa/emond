@@ -18,8 +18,7 @@
   }
 
   &:before {
-    content: "\f061";
-    color: $primary;
+    content: "";
     width: 34px;
     height: 34px;
     border-radius: 50%;
@@ -31,11 +30,7 @@
     position: absolute;
     left: 0;
     top: 0;
-
-    font: {
-      size: 14px;
-      family: $f-fa;
-    }
+    background: url('images/icon_arrow_red.png') no-repeat center/contain;
 
     text: {
       align: center;

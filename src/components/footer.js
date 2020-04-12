@@ -20,7 +20,7 @@ const Footer = () => {
       <section className="top-section contact-section">
         <div className="container">
           <h3>CONTACT US</h3>
-          <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+          <form name="contact" method="POST" data-netlify="true">
             <div className="field-wrapper">
               <div className="mb20-tb">
                 <div className="form-control">

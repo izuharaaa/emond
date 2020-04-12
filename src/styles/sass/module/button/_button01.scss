@@ -1,0 +1,59 @@
+@mixin button01 {
+  display: inline-block;
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+  color: #262626;
+  text-decoration: none;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 50px;
+
+  &:hover {
+    color: $primary;
+  }
+
+  font: {
+    size: 21px;
+    weight: bold;
+  }
+
+  &:before {
+    content: "\f061";
+    color: $primary;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 1px 1px 6px 0px rgba(0,0,0,0.16);
+    line-height: 34px;
+    display: inline-block;
+    margin-right: 15px;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    font: {
+      size: 14px;
+      family: $f-fa;
+    }
+
+    text: {
+      align: center;
+      decoration: none;
+    }
+
+    @media only screen and (max-width: $screen-tb) {
+      width: 26px;
+      height: 26px;
+      line-height: 26px;
+      font-size: 11px;
+      margin-right: 10px;
+    }
+  }
+
+  @media only screen and (max-width: $screen-tb) {
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding-left: 40px;
+  }
+}

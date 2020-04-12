@@ -1,0 +1,41 @@
+@charset "UTF-8";
+// --------------------------------------------------
+// Headings
+// --------------------------------------------------
+h2 {
+  letter-spacing: 0.2em;
+  margin-bottom: 50px;
+
+  font: {
+    size: 46px;
+    weight: bold;
+    family: $futura;
+  }
+
+  @media only screen and (max-width: $screen-tb) {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+}
+
+h3 {
+  margin-bottom: 60px;
+  letter-spacing: 0.2em;
+  
+  font: {
+    size: 46px;
+    weight: bold;
+    family: $futura;
+  }
+
+  @media only screen and (max-width: $screen-tb) {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+}
+
+a {
+  text-decoration: none;
+  box-shadow: none;
+  display: inline-block;
+}

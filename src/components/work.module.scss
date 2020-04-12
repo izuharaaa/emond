@@ -1,0 +1,171 @@
+.containerWrapper {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.innerWrapper {
+  max-width: 680px;
+  margin: 0 auto 85px;
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: 0 30px;
+    margin: 0 auto 75px;
+  }
+}
+
+.workTitle {
+  margin-bottom: 30px;
+
+  font: {
+    size: 24px;
+    weight: bold;
+  };
+
+  @media only screen and (max-width: 768px) {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}
+
+.workContent {
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 0;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 15px;
+  }
+}
+
+.relatedProjects {
+  max-width: 1220px;
+  margin: 0 auto 80px;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+
+  >li {
+    width: calc(33.33% - 12.5px);
+
+    @media only screen and (max-width: 650px) {
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 650px) {
+    display: block;
+  }
+}
+
+.relatedProjectItem {
+  overflow: hidden;
+  box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.15);
+  transition: all .3s ease;
+
+  img {
+    transition: all .3s ease;
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.6);
+
+    img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.workMainSlider {
+  max-width: 680px;
+  margin: 0 auto;
+
+  @media only screen and (max-width: 768px) {
+    padding: 0 30px;
+  }
+}
+
+.workSliderWrapper {
+  margin-bottom: 60px;
+  padding: 40px 0;
+  position: relative;
+  overflow: hidden;
+
+  .workCoverSlider {
+    position: absolute;
+    filter: blur(30px);
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    width: 100%;
+
+    .workCoverSlide {
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.workSlider {
+  margin-bottom: 20px;
+}
+
+.workSliderInfo {
+  display: flex;
+
+  .workSliderSquare {
+    width: 34px;
+    height: 34px;
+    background: #fff;
+    position: relative;
+    border-radius: 3px;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    >a {
+      display: inline-block;
+      height: 20px;
+    }
+  }
+
+  .webButton {
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #262626;
+    position: relative;
+    border-radius: 3px;
+    height: 34px;
+    line-height: 34;
+
+    font: {
+      size: 14px;
+      weight: bold;
+    }
+  
+    &:before {
+      content: "";
+      display: inline-block;
+      background: url('../styles/sass/images/globe.svg') no-repeat center/contain;
+      width: 14px;
+      height: 14px;
+      line-height: 1;
+      margin-right: 5px;
+    }
+  }
+}

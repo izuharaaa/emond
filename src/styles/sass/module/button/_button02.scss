@@ -1,0 +1,37 @@
+@mixin button02 {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  background:#707070;
+  text-decoration: none;
+  transition: all .3s ease;
+  padding: 18px 80px;
+  border-radius: 4px;
+
+  font: {
+    size: 20px;
+    weight: bold;
+  };
+
+  &:before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    background: url('images/arr.svg') no-repeat center/contain;
+    width: 13px;
+    height: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  @media only screen and (max-width: $screen-tb) {
+    font-size: 14px;
+    padding: 10px 25px;
+    min-width: 315px;
+  }
+}

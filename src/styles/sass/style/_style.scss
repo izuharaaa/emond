@@ -1,0 +1,559 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "Futara";
+  src: url("~/static/fonts/Futura-Bold.woff") format("woff");
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.parallaxText {
+  width: 380px;
+
+  @media only screen and (max-width: $screen-tb) {
+    width: 175px;
+  }
+}
+
+.topKeyvisual {
+  height: 800px;
+  position: relative;
+
+  .topKeyvisualContainer {
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 150px;
+    
+    @media only screen and (max-width: $screen-tb) {
+      width: 100%;
+      padding: 0 30px;
+      position: absolute;
+      bottom: 130px;
+    }
+  }
+
+  .topKeyText {
+    letter-spacing: 0.06em;
+
+    font: {
+      size: 40px;
+      weight: bold;
+    }
+
+    @media only screen and (max-width: $screen-tb) {
+      font-size: 30px;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .topKeyImage {
+    position: absolute;
+    top: -300px;
+    right: -150px;
+    width: 880px;
+
+    @media only screen and (max-width: $screen-sp) {
+      width: 570px;
+      left: -20px;
+      top: -120px;
+      right: auto;
+    }
+  }
+
+  @media only screen and (max-width: $screen-tb) {
+    height: 600px;
+  }
+}
+
+.top-section {
+  padding: 70px 0;
+
+  @media only screen and (max-width: $screen-tb) {
+    padding: 40px 0;
+  }
+}
+
+.about-section {
+
+  .about-txt {
+    letter-spacing: 0;
+    line-height: 2.8;
+    max-width: 700px;
+    margin: 0 auto;
+
+    font: {
+      size: 17px;
+    }
+
+    @media only screen and (max-width: $screen-tb) {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+  }
+
+  .about-boxes {
+    @include flex($j-content:space-around);
+
+    .cross {
+      padding-top: 50px;
+
+      @media only screen and (max-width: $screen-tb) {
+        padding: 25px 0;
+        text-align: center;
+        @include flex($a-items:center, $j-content:center);
+        position: relative;
+
+        &:after {
+          content: "";
+          width: 100%;
+          height: 1px;
+          background: #ddd;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+        }
+
+        >span {
+          padding: 0 10px;
+          background: #fff;
+          z-index: 1;
+        }
+
+        img {
+          width: 23px;
+        }
+      }
+    }
+
+    @media only screen and (max-width: $screen-tb) {
+      >.item {
+        width: 100%;
+      }
+    }
+  }
+
+  .about-box {
+    .about-box-icon {
+      text-align: center;
+      margin-bottom: 15px;
+      min-height: 121px;
+      @include flex($a-items:center, $j-content:center);
+
+      @media only screen and (max-width: $screen-tb) {
+        max-width: 75px;
+        min-height: auto;
+        margin: 0 auto;
+      }
+    }
+
+    .about-box-ttl,
+    .about-box-txt {
+      text-align: center;
+    }
+
+    .about-box-ttl {
+      letter-spacing: 0.06em;
+      margin-bottom: 5px;
+
+      font: {
+        size: 25px;
+        weight: bold;
+        family: $futura;
+      }
+
+      @media only screen and (max-width: $screen-tb) {
+        font-size: 19px;
+      }
+    }
+
+    .about-box-txt {
+      letter-spacing: 0;
+
+      font: {
+        size: 15px;
+        weight: bold;
+      }
+
+      @media only screen and (max-width: $screen-tb) {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+.service-section {
+  .service-boxes {
+    >.item {
+      &:not(:last-child) {
+        margin-bottom: 60px;
+
+        @media only screen and (max-width: $screen-tb) {
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+
+  .service-box {
+    @include flex($j-content:space-between);
+    position: relative;
+
+    .service-box-image {
+      width: 360px;
+      text-align: center;
+
+      img {
+        width: 100%;
+      }
+
+      @media only screen and (max-width: $screen-tb) {
+        width: 200px;
+        position: absolute;
+        left: -80px;
+        top: 0;
+      }
+    }
+
+    .service-box-txt {
+      color: #666;
+      letter-spacing: 0;
+      line-height: 2;
+      font-size: 17px;
+
+      @media only screen and (max-width: $screen-tb) {
+        font-size: 14px;
+        line-height: 1.7;
+      }
+    }
+
+
+    .service-box-content {
+      padding-top: 25px;
+      width: calc(100% - 420px);
+
+      @media only screen and (max-width: $screen-tb) {
+        width: calc(100% - 140px);
+        padding-top: 10px;
+      }
+    }
+
+    @media only screen and (max-width: $screen-tb) {
+      @include j-content(flex-end);
+      min-height: 160px;
+    }
+  }
+}
+
+.member-section {
+  .member-boxes {
+    @include flex;
+
+    >.item {
+      max-width: 210px;
+      width: 100%;
+
+      &:not(:nth-child(4n)) {
+        margin-right: 40px;
+
+        @media only screen and (max-width: $screen-tb) {
+          margin-right: 0;
+        }
+      }
+
+      @media only screen and (max-width: $screen-tb) {
+        max-width: 130px;
+      }
+    }
+
+    @media only screen and (max-width: $screen-tb) {
+      padding: 0 10px;
+      @include j-content(space-between);
+    }
+  }
+
+  .member-box {
+    .member-box-image {
+      margin-bottom: 20px;
+      max-width: 210px;
+
+      .img-cover {
+        padding-top: 100%;
+      }
+
+      @media only screen and (max-width: $screen-tb) {
+        margin-bottom: 10px;
+      }
+    }
+    
+    .member-box-name {
+      text-align: center;
+      line-height: 1.56;
+
+      font: {
+        size: 23px;
+        weight: bold;
+      }
+
+      @media only screen and (max-width: $screen-tb) {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.top-service-section {
+  .main-service-boxes {
+    padding-bottom: 450px;
+    position: relative;
+    @include flex($f-wrap:nowrap);
+
+    @media only screen and (max-width: $screen-tb) {
+      padding-bottom: 520px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+
+  .main-service-box {
+    text-align: center;
+    position: absolute;
+
+    &.web-box {
+      top: 160px;
+
+      @media only screen and (max-width: $screen-tb) {
+        top: 0;
+        left: calc(50% - 255px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+      }
+    }
+
+    &.apparel-box {
+      top: -190px;
+      left: 330px;
+
+      @media only screen and (max-width: $screen-tb) {
+        top: 50px;
+        left: auto;
+        right: calc(50% - 265px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .button01 {
+          margin-left: 20px;
+        }
+      }
+    }
+
+    &.branding-box {
+      top: 160px;
+      right: -70px;
+
+      @media only screen and (max-width: $screen-tb) {
+        left: calc(50% - 225px);
+        bottom: 0;
+        top: auto;
+        right: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        .button01 {
+          margin-right: -40px;
+        }
+      }
+    }
+    
+    .main-service-box-image {
+      margin-bottom: 25px;
+
+      @media only screen and (max-width: $screen-tb) {
+        width: 240px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.gallery-section {
+  overflow: hidden;
+}
+
+.gallery-slider {
+  margin: 0 -10px;
+
+  .slick-custom-arr {
+    position: absolute;
+    right: 10px;
+    top: -108px;
+
+    &.left-arr {
+      right: 70px;
+    }
+
+    @media only screen and (max-width: $screen-tb) {
+      display: none;
+    }
+  }
+
+  .slick-list {
+    overflow: visible;
+  }
+
+  .slick-slide {
+    width: 360px;
+    padding: 0 10px;
+
+    @media only screen and (max-width: $screen-tb) {
+      width: 260px;
+    }
+  }
+
+  .slick-dots {
+    text-align: left;
+    left: 5px;
+
+    >li {
+      width: 15px;
+      height: 15px;
+    }
+
+    button {
+      width: 15px;
+      height: 15px;
+      background: #707070;
+      border: 1px solid #707070;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  .slick-active {
+    button {
+      background: #fff;
+    }
+  }
+}
+
+.contact-section {
+  background: #f8f8f8;
+
+  .field-wrapper {
+    @include flex($j-content:space-between);
+    margin-bottom: 50px;
+
+    >div {
+      width: calc(50% - 20px);
+
+      @media only screen and (max-width: $screen-tb) {
+        width: 100%;
+      }
+    }
+
+    @media only screen and (max-width: $screen-tb) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .form-text-field {
+    width: 100%;
+  }
+}
+
+.form-field-name {
+  margin-bottom: 10px;
+
+  font: {
+    size: 16px;
+    weight: bold;
+  }
+
+  @media only screen and (max-width: $screen-tb) {
+    font-size: 14px;
+  }
+}
+
+.form-textarea,
+.form-text-field {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px 15px;
+}
+
+.form-textarea {
+  min-height: 290px;
+  width: 100%;
+
+  @media only screen and (max-width: $screen-tb) {
+    min-height: 180px;
+  }
+}
+
+.form-text-field {
+  height: 50px;
+
+  @media only screen and (max-width: $screen-tb) {
+    height: 46px;
+  }
+}
+
+button:focus {
+  outline: none;
+}
+
+.work-slider {
+  .slick-dots {
+    bottom: -43px;
+    left: 190px;
+    text-align: left;
+
+    button {
+      padding: 0;
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background: #707070;
+    
+      &:before {
+        display: none;
+      }
+
+      @media only screen and (max-width: 768px) {
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      position: static;
+      
+      >li {
+        width: 10px;
+        height: 10px;
+        margin: 0 2.5px;
+      }
+    }
+  }
+
+  .slick-active {
+    button {
+      background: #fff;
+    }
+  }
+}

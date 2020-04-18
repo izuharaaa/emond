@@ -1,22 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `EMOND WEBSITE`,
+    title: `EMOND`,
     author: {
       name: `Nagano Wataru`,
-      summary: `Emond Website`,
+      summary: `EMOND`,
     },
-    description: `Emond Website`,
+    description: `EMOND`,
     siteUrl: `https://emond.jp/`,
-    social: {
-      twitter: `emond`,
-    },
   },
   plugins: [
     {
       resolve: `gatsby-plugin-sass`,
-      options: {
-        postCssPlugins: [require('tailwindcss')('./tailwind.config.js')]
-      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -41,7 +35,6 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
@@ -64,16 +57,10 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/emond-icon.png`,
+        icon: `src/images/common/emond-icon.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

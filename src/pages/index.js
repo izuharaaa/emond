@@ -7,6 +7,10 @@ import SEO from "../components/seo"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 
+import diamond from '../images/index/about/diamond.svg'
+import rocket from '../images/index/about/rocket.svg'
+import smile from '../images/index/about/smile.svg'
+
 import Layout from '../components/layout'
 
 function SampleNextArrow(props) {
@@ -24,11 +28,9 @@ function SamplePrevArrow(props) {
 }
 
 const IndexPage = () => {
-  let parallax;
-
   const data = useStaticQuery(graphql`
     query MyQuery {
-      allFile(filter: {extension: {regex: "/(jpg)/"}, relativeDirectory: {eq: "index/gallery"}}) {
+      index: allFile(filter: {relativeDirectory: {eq: "index"}}) {
         edges {
           node {
             base
@@ -37,6 +39,28 @@ const IndexPage = () => {
                 ...GatsbyImageSharpFluid
               }
             }
+          }
+        }
+      }
+
+      gallery: allFile(filter: {extension: {regex: "/(jpg)/"}, relativeDirectory: {eq: "index/gallery"}}) {
+        edges {
+          node {
+            base
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+
+      about: allFile(filter: {relativeDirectory: {eq: "index/about"}}) {
+        edges {
+          node {
+            base
+            publicURL
           }
         }
       }
@@ -61,16 +85,14 @@ const IndexPage = () => {
       <SEO title="TOP PAGE" />
       <main>
         <div className="parallaxText">
-        {/* {data.allFile.edges.map(({ node }) => (
-          <Img fluid={data.file.childImageSharp.fluid} alth="parallax" />
-        ))} */}
+          <Img fluid={data.index.edges[14].node.childImageSharp.fluid} alt="parallax" />
         </div>
         <div className="topKeyvisual">
           <div className="topKeyvisualContainer">
             <div className="topKeyText">デザイン通じて<br />別の可能性を作る</div>
           </div>
           <div className="topKeyImage">
-          <img src={`../../images/bg02.png`} alt="" />
+            <Img fluid={data.index.edges[20].node.childImageSharp.fluid} alt="デザイン通じて別の可能性を作る" />
           </div>
         </div>
         <section className="top-section top-service-section">
@@ -107,28 +129,28 @@ const IndexPage = () => {
               <div className="gallery-image">
                 <div>
                   <Link to="/work01/" className="block">
-                    <Img fluid={data.allFile.edges[0].node.childImageSharp.fluid} alth="parallax" />
+                    <Img fluid={data.gallery.edges[0].node.childImageSharp.fluid} alth="parallax" />
                   </Link>
                 </div>
               </div>
               <div className="gallery-image">
                 <div>
                   <Link to="/work01/" className="block">
-                    <Img fluid={data.allFile.edges[1].node.childImageSharp.fluid} alth="parallax" />
+                    <Img fluid={data.gallery.edges[1].node.childImageSharp.fluid} alth="parallax" />
                   </Link>
                 </div>
               </div>
               <div className="gallery-image">
                 <div>
                   <Link to="/work01/" className="block">
-                    <Img fluid={data.allFile.edges[2].node.childImageSharp.fluid} alth="parallax" />
+                    <Img fluid={data.gallery.edges[2].node.childImageSharp.fluid} alth="parallax" />
                   </Link>
                 </div>
               </div>
               <div className="gallery-image">
                 <div>
                   <Link to="/work01/" className="block">
-                    <Img fluid={data.allFile.edges[3].node.childImageSharp.fluid} alth="parallax" />
+                    <Img fluid={data.gallery.edges[3].node.childImageSharp.fluid} alth="parallax" />
                   </Link>
                 </div>
               </div>
@@ -141,7 +163,9 @@ const IndexPage = () => {
             <ul className="about-boxes mb80 mb40-tb">
               <li className="item">
                 <div className="about-box">
-                  <div className="about-box-icon"><img src={`../../images/diamond.svg`} alt="" /></div>
+                  <div className="about-box-icon">
+                    <img src={diamond} alt="Diamond" />
+                  </div>
                   <p className="about-box-ttl">Diamond</p>
                   <p className="about-box-txt">輝かしき、魅力があるもの</p>
                 </div>
@@ -149,7 +173,9 @@ const IndexPage = () => {
               <li className="item cross"><span><img src={`../../images/cross.svg`} alt="" /></span></li>
               <li className="item">
                 <div className="about-box">
-                  <div className="about-box-icon"><img src={`../../images/rocket.svg`} alt="" /></div>
+                  <div className="about-box-icon">
+                    <img src={rocket} alt="Beyond" />
+                  </div>
                   <p className="about-box-ttl">Beyond</p>
                   <p className="about-box-txt">超える、想像を超える</p>
                 </div>
@@ -157,7 +183,9 @@ const IndexPage = () => {
               <li className="item cross"><span><img src={`../../images/cross.svg`} alt="" /></span></li>
               <li className="item">
                 <div className="about-box">
-                  <div className="about-box-icon"><img src={`../../images/smile.svg`} alt="" /></div>
+                  <div className="about-box-icon">
+                    <img src={smile} alt="Emotion" />
+                  </div>
                   <p className="about-box-ttl">Emotion</p>
                   <p className="about-box-txt">ハートを揺さぶる、感情が動いた先に</p>
                 </div>

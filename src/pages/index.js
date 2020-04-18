@@ -4,6 +4,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Link } from "gatsby"
 import SEO from "../components/seo"
+import Img from "gatsby-image"
+import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from '../components/layout'
 
@@ -24,6 +26,29 @@ function SamplePrevArrow(props) {
 const IndexPage = () => {
   let parallax;
 
+  const data = useStaticQuery(graphql`
+    query MyQuery {
+      allFile(filter: {extension: {regex: "/(jpg)/"}, relativeDirectory: {eq: "index/gallery"}}) {
+        edges {
+          node {
+            base
+            childImageSharp {
+              fluid {
+                aspectRatio
+                base64
+                sizes
+                src
+                srcSet
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  console.log(data);
+
   const settings = {
     dots: true,
     variableWidth: true,
@@ -39,7 +64,11 @@ const IndexPage = () => {
     <Layout>
       <SEO title="TOP PAGE" />
       <main>
-        <img src={`../../images/parallaxText.png`} alt="" className="parallaxText" />
+        <div className="parallaxText">
+        {/* {data.allFile.edges.map(({ node }) => (
+          <Img fluid={data.file.childImageSharp.fluid} alth="parallax" />
+        ))} */}
+        </div>
         <div className="topKeyvisual">
           <div className="topKeyvisualContainer">
             <div className="topKeyText">デザイン通じて<br />別の可能性を作る</div>
@@ -81,24 +110,30 @@ const IndexPage = () => {
             <Slider className="gallery-slider" {...settings}>
               <div className="gallery-image">
                 <div>
-                  <Link to="/work01/">
-                    <img src={`../../images/gallery01.jpg`} alt="" />
+                  <Link to="/work01/" className="block">
+                    <Img fluid={data.allFile.edges[0].node.childImageSharp.fluid} alth="parallax" />
                   </Link>
                 </div>
               </div>
               <div className="gallery-image">
                 <div>
-                  <img src={`../../images/gallery02.jpg`} alt="" />
+                  <Link to="/work01/" className="block">
+                    <Img fluid={data.allFile.edges[1].node.childImageSharp.fluid} alth="parallax" />
+                  </Link>
                 </div>
               </div>
               <div className="gallery-image">
                 <div>
-                  <img src={`../../images/gallery03.jpg`} alt="" />
+                  <Link to="/work01/" className="block">
+                    <Img fluid={data.allFile.edges[2].node.childImageSharp.fluid} alth="parallax" />
+                  </Link>
                 </div>
               </div>
               <div className="gallery-image">
                 <div>
-                  <img src={`../../images/gallery04.jpg`} alt="" />
+                  <Link to="/work01/" className="block">
+                    <Img fluid={data.allFile.edges[3].node.childImageSharp.fluid} alth="parallax" />
+                  </Link>
                 </div>
               </div>
             </Slider>

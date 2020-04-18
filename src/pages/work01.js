@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import Project01 from "../components/relatedProject01"
 import Img from "gatsby-image"
 import { StaticQuery, graphql } from "gatsby"
+import icon_instagram from '../images/common/icon_instagram.png'
 
 
 import Work from '../components/work'
@@ -102,7 +103,7 @@ class WorkPage01 extends Component {
                     </Slider>
                     <div className={workStyles.workSliderInfo}>
                       <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer"  className={workStyles.webButton}>WEB SITE</a>
-                      <div className={workStyles.workSliderSquare}><a href="https://www.instagram.com/emond.onsen/" target="_blank" rel="noopener noreferrer"><img src={`../../images/icon_instagram.png`} width="20" alt="instagram" /></a></div>
+                      <div className={workStyles.workSliderSquare}><a href="https://www.instagram.com/emond.onsen/" target="_blank" rel="noopener noreferrer"><img src={icon_instagram} width="20" alt="instagram" /></a></div>
                     </div>
                   </div>
                 </div>

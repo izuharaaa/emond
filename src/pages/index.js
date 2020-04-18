@@ -34,11 +34,7 @@ const IndexPage = () => {
             base
             childImageSharp {
               fluid {
-                aspectRatio
-                base64
-                sizes
-                src
-                srcSet
+                ...GatsbyImageSharpFluid
               }
             }
           }

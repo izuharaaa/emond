@@ -433,6 +433,22 @@ body {
     width: 360px;
     padding: 0 10px;
 
+    .gallery-image {
+      transition: all .3s ease !important;
+
+      img {
+        transition: all .3s ease !important;
+      }
+
+      &:hover {
+        box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.6);
+
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+
     @media only screen and (max-width: $screen-tb) {
       width: 260px;
     }

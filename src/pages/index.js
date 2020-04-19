@@ -1,7 +1,4 @@
 import React from "react"
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
 import { Link } from "gatsby"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
@@ -10,24 +7,10 @@ import { useStaticQuery, graphql } from "gatsby"
 import diamond from '../images/index/about/diamond.svg'
 import rocket from '../images/index/about/rocket.svg'
 import smile from '../images/index/about/smile.svg'
-import arr_right from '../images/common/arr_right.png'
-import arr_left from '../images/common/arr_left.png'
 
 import Layout from '../components/layout'
+import Gallery from "../components/gallery"
 
-function SampleNextArrow(props) {
-  const { onClick } = props;
-  return (
-    <button className="slick-custom-arr right-arr" onClick={onClick}><img src={arr_right} alt=""/></button>
-  );
-}
-
-function SamplePrevArrow(props) {
-  const { onClick } = props;
-  return (
-    <button className="slick-custom-arr left-arr" onClick={onClick}><img src={arr_left} alt=""/></button>
-  );
-}
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -95,17 +78,6 @@ const IndexPage = () => {
     }
   `)
 
-  const settings = {
-    dots: true,
-    variableWidth: true,
-    slidesToScroll: 1,
-    slidesToShow: 1,
-    infinite: false,
-    centerMode: false,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-  };
-
   return (
     <Layout>
       <SEO title="笑門道" />
@@ -158,36 +130,7 @@ const IndexPage = () => {
             <h2>GALLERY</h2>
             <div className="slider-wrapper">
             </div>
-            <Slider className="gallery-slider" {...settings}>
-              <div className="gallery-image">
-                <div>
-                  <Link to="/work01/" className="block">
-                    <Img fluid={data.gallery.edges[0].node.childImageSharp.fluid} alt="work" />
-                  </Link>
-                </div>
-              </div>
-              <div className="gallery-image">
-                <div>
-                  <Link to="/work02/" className="block">
-                    <Img fluid={data.gallery.edges[1].node.childImageSharp.fluid} alt="work" />
-                  </Link>
-                </div>
-              </div>
-              <div className="gallery-image">
-                <div>
-                  <Link to="/work03/" className="block">
-                    <Img fluid={data.gallery.edges[2].node.childImageSharp.fluid} alt="work" />
-                  </Link>
-                </div>
-              </div>
-              <div className="gallery-image">
-                <div>
-                  <Link to="/work04/" className="block">
-                    <Img fluid={data.gallery.edges[3].node.childImageSharp.fluid} alt="work" />
-                  </Link>
-                </div>
-              </div>
-            </Slider>
+            <Gallery />
           </div>
         </section>
         <section className="top-section about-section">

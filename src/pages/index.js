@@ -7,6 +7,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import diamond from '../images/index/about/diamond.svg'
 import rocket from '../images/index/about/rocket.svg'
 import smile from '../images/index/about/smile.svg'
+import cross from '../images/common/cross.svg'
 
 import Layout from '../components/layout'
 import Gallery from "../components/gallery"
@@ -146,7 +147,7 @@ const IndexPage = () => {
                   <p className="about-box-txt">輝かしき、魅力があるもの</p>
                 </div>
               </li>
-              <li className="item cross"><span><img src={`../../images/cross.svg`} alt="" /></span></li>
+              <li className="item cross"><span><img src={cross} alt="" /></span></li>
               <li className="item">
                 <div className="about-box">
                   <div className="about-box-icon">
@@ -156,7 +157,7 @@ const IndexPage = () => {
                   <p className="about-box-txt">超える、想像を超える</p>
                 </div>
               </li>
-              <li className="item cross"><span><img src={`../../images/cross.svg`} alt="" /></span></li>
+              <li className="item cross"><span><img src={cross} alt="" /></span></li>
               <li className="item">
                 <div className="about-box">
                   <div className="about-box-icon">
@@ -210,7 +211,7 @@ const IndexPage = () => {
             </ul>
           </div>
         </section>
-        <section className="top-section member-section">
+        <section className="top-section member-section mb120 mb60-tb">
           <div className="container">
             <h3>MEMBER</h3>
             <ul className="member-boxes">
@@ -249,13 +250,13 @@ const IndexPage = () => {
             </ul>
           </div>
         </section>
-        <div className="mb120 mb60-tb">
+        {/* <div className="mb120 mb60-tb">
           <div className="container">
             <div className="topBanner">
               <Img fluid={data.index.edges[0].node.childImageSharp.fluid} alt="バナー" />
             </div>
           </div>
-        </div>
+        </div> */}
       </main>
     </Layout>
   )

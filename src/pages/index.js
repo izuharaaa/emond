@@ -154,7 +154,7 @@ const IndexPage = () => {
             <li className="item">
               <div className="service-box">
                 <div className="service-box-content">
-                  <Link to="/apparel/" className="button01 unactive-btn">アパレル事業</Link>
+                  <Link to="/apparel/" className="button01">アパレル事業</Link>
                 </div>
               </div>
             </li>

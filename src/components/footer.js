@@ -17,7 +17,7 @@ const Footer = () => {
 
   return (
     <footer className={footerStyles.footer}>
-      <section className="top-section contact-section">
+      <section className="contact-section">
         <div className="container">
           <h3>CONTACT US</h3>
           <form name="contact" method="POST" data-netlify="true">

@@ -30,7 +30,7 @@ const Gallery = () => {
     slidesToScroll: 1,
     slidesToShow: 1,
     infinite: true,
-    autoplay: true,
+    autoplay: false,
     centerMode: false,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,

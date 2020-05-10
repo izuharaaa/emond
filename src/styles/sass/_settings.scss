@@ -16,12 +16,6 @@ $header-height-pc: 100px;
 // スマホのヘッダーの高さ(必須)
 $header-height-sp: 60px;
 
-// LightCMS導入サイトかどうかの設定 - true/false
-$light-cms: true;
-
-// LightCMS使用時に設定 - CMSエディタ内幅指定
-$light-cms-column-width: 690px;
-
 // プレークポイント
 $screen-tb: 768px;
 $screen-sp: 480px;
@@ -46,7 +40,7 @@ $base-font: "ヒラギノ角ゴシック ProN", "Hiragino Kaku Gothic ProN", "�
 
 // コンテナ両サイドの余白
 $gutter-pc: 20px !default;
-$gutter-tb: 60px !default;
+$gutter-tb: 50px !default;
 $gutter-sp: $gutter-tb !default;
 
 // グリッドシステムカラムのそれぞれの間の余白

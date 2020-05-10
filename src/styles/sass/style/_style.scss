@@ -19,65 +19,95 @@ body {
 }
 
 .topKeyvisual {
-  height: 800px;
-  position: relative;
+  margin-bottom: 120px;
+
+  .videoWrap {
+    height: 100vh;
+    width: 100%;
+    video {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      font-family: 'object-fit: cover; object-position: center;';
+    }
+    @media only screen and (max-width: $screen-tb) {
+      height: 60vh;
+    }
+  }
+
+  .topBgBlack {
+    background: #222;
+    border: 1px solid #707070;
+    padding: 70px 0;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 30px;
+      right: 0;
+      left: 40px;
+      bottom: 30px;
+      background: url(images/bg01.png) no-repeat center/contain;
+    }
+    @media only screen and (max-width: $screen-tb) {
+      padding: 50px 0 55px;
+      &:after {
+        top: 70px;
+        left: 15px;
+        background-position: top;
+      }
+    }
+  }
 
   .topKeyvisualContainer {
-    width: 1000px;
+    width: 390px;
     margin: 0 auto;
-    padding-top: 150px;
-    
+    position: relative;
+    z-index: 1;
+
     @media only screen and (max-width: $screen-tb) {
       width: 100%;
-      padding: 0 30px;
-      position: absolute;
-      bottom: 130px;
+      padding: 0 25px;
     }
   }
 
   .topKeyText {
-    letter-spacing: 0.06em;
-
     font: {
       size: 40px;
       weight: bold;
     }
+    color: #fff;
+    line-height: 1.6;
+    letter-spacing: 0.2em;
+    text-align: center;
+    margin-bottom: 10px;
 
     @media only screen and (max-width: $screen-tb) {
-      font-size: 30px;
-      position: relative;
-      z-index: 1;
+      font-size: 28px;
     }
   }
 
-  .topKeyImage {
-    position: absolute;
-    top: -300px;
-    right: -150px;
-    width: 880px;
-
-    @media only screen and (max-width: $screen-sp) {
-      width: 570px;
-      left: -20px;
-      top: -120px;
-      right: auto;
+  .subKeyText {
+    width: 380px;
+    font-size: 16px;
+    color: #fff;
+    line-height: 2;
+    letter-spacing: 0;
+    margin: 0 auto;
+    @media only screen and (max-width: $screen-tb) {
+      width: 100%;
+      font-size: 14px;
     }
   }
 
   @media only screen and (max-width: $screen-tb) {
-    height: 600px;
-  }
-}
-
-.top-section {
-  padding: 70px 0;
-
-  @media only screen and (max-width: $screen-tb) {
-    padding: 40px 0;
+    margin-bottom: 55px;
   }
 }
 
 .about-section {
+  margin-bottom: 130px;
 
   .about-txt {
     letter-spacing: 0;
@@ -96,36 +126,41 @@ body {
   }
 
   .about-boxes {
-    @include flex($j-content:space-around);
+    @include flex($j-content:space-between);
+
+    >.item:not(.cross) {
+      max-width: 270px;
+      width: 29%;
+      border-radius: 3px;
+      box-shadow: 0 0 6px 0 rgba( #ddd, 1);
+      padding: 40px 0;
+      @media only screen and (max-width: $screen-tb) {
+        width: 100%;
+        max-width: 450px;
+        margin: 0 auto;
+        padding: 30px 0;
+      }
+    }
 
     .cross {
-      padding-top: 50px;
+      position: relative;
+      >span {
+        width: 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
 
       @media only screen and (max-width: $screen-tb) {
-        padding: 25px 0;
+        padding: 20px 0;
         text-align: center;
         @include flex($a-items:center, $j-content:center);
-        position: relative;
-
-        &:after {
-          content: "";
-          width: 100%;
-          height: 1px;
-          background: #ddd;
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          left: 0;
-        }
 
         >span {
-          padding: 0 10px;
-          background: #fff;
-          z-index: 1;
-        }
-
-        img {
           width: 23px;
+          position: static;
+          transform: none;
         }
       }
     }
@@ -184,125 +219,121 @@ body {
       }
     }
   }
+  @media only screen and (max-width: $screen-tb) {
+    margin-bottom: 80px;
+  }
 }
 
 .service-section {
+  margin-bottom: 120px;
   .service-boxes {
     >.item {
-      &:not(:last-child) {
-        margin-bottom: 60px;
-
-        @media only screen and (max-width: $screen-tb) {
-          margin-bottom: 40px;
-        }
+      height: 550px;
+      @media only screen and (max-width: $screen-tb) {
+        height: 350px;
+      }
+      &:first-child {
+        background: url(images/service01.jpg) no-repeat center/cover;
+      }
+      &:nth-child(2) {
+        background: url(images/service02.jpg) no-repeat center/cover;
+      }
+      &:nth-child(3) {
+        background: url(images/service03.jpg) no-repeat center/cover;
       }
     }
   }
 
   .service-box {
-    @include flex($j-content:space-between);
+    @extend .container;
+    height: 100%;
     position: relative;
 
-    .service-box-image {
-      width: 360px;
-      text-align: center;
-
-      img {
-        width: 100%;
-      }
-
-      @media only screen and (max-width: $screen-tb) {
-        width: 200px;
-        position: absolute;
-        left: -80px;
-        top: 0;
-      }
-    }
-
-    .service-box-txt {
-      color: #666;
-      letter-spacing: 0;
-      line-height: 2;
-      font-size: 17px;
-
-      @media only screen and (max-width: $screen-tb) {
-        font-size: 14px;
-        line-height: 1.7;
-      }
-    }
-
-
     .service-box-content {
-      padding-top: 25px;
-      width: calc(100% - 420px);
+      position: absolute;
+      right: 10px;
+      bottom: 50px;
 
-      @media only screen and (max-width: $screen-tb) {
-        width: calc(100% - 140px);
-        padding-top: 10px;
+      .button01 {
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 30px;
+        padding: 9px 50px;
+
+        transition: .3s;
+        &:hover {
+          color: $primary;
+          background: #fff;
+        }
       }
-    }
-
-    @media only screen and (max-width: $screen-tb) {
-      @include j-content(flex-end);
-      min-height: 160px;
+      @media only screen and (max-width: $screen-tb) {
+        right: 25px;
+        left: 25px;
+        bottom: 40px;
+        text-align: center;
+        .button01 {
+          width: 100%;
+          padding: 9px 10px;
+        }
+      }
     }
   }
 }
 
 .member-section {
+  margin-bottom: 140px;
+
   .member-boxes {
-    @include flex;
+    @include flex($j-content: space-between);
 
     >.item {
-      max-width: 210px;
-      width: 100%;
-
-      &:not(:nth-child(4n)) {
-        margin-right: 40px;
-
-        @media only screen and (max-width: $screen-tb) {
-          margin-right: 0;
-        }
-      }
+      max-width: 300px;
+      width: 32%;
 
       @media only screen and (max-width: $screen-tb) {
-        max-width: 130px;
+        max-width: 450px;
+        width: 100%;
+        margin: 0 auto 30px;
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
     }
 
     @media only screen and (max-width: $screen-tb) {
-      padding: 0 10px;
-      @include j-content(space-between);
+      display: block;
     }
   }
 
   .member-box {
-    .member-box-image {
-      margin-bottom: 20px;
-      max-width: 210px;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 0 6px 0 rgba( #ddd, 1);
 
-      .img-cover {
-        padding-top: 100%;
-      }
-
-      @media only screen and (max-width: $screen-tb) {
-        margin-bottom: 10px;
-      }
-    }
-    
     .member-box-name {
-      text-align: center;
-      line-height: 1.56;
+      padding: 15px 0 10px;
 
-      font: {
-        size: 23px;
-        weight: bold;
+      .sub {
+        font-weight: bold;
+        line-height: 1;
+        text-align: center;
+      }
+
+      .name {
+        font: {
+          size: 23px;
+          weight: bold;
+        }
+        text-align: center;
       }
 
       @media only screen and (max-width: $screen-tb) {
         font-size: 14px;
       }
     }
+  }
+  @media only screen and (max-width: $screen-tb) {
+    margin-bottom: 120px;
   }
 }
 
@@ -382,7 +413,7 @@ body {
         }
       }
     }
-    
+
     .main-service-box-image {
       margin-bottom: 25px;
 
@@ -399,10 +430,27 @@ body {
 
 .gallery-section {
   overflow: hidden;
+  padding-bottom: 30px;
+  margin-bottom: 120px;
+  @media only screen and (max-width: $screen-tb) {
+    margin-bottom: 90px;
+  }
 }
 
 .gallery-slider {
   margin: 0 -10px;
+
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 1;
+  }
 
   .slick-custom-arr {
     position: absolute;
@@ -484,6 +532,7 @@ body {
 
 .contact-section {
   background: #f8f8f8;
+  padding: 100px 5px;
 
   .field-wrapper {
     @include flex($j-content:space-between);
@@ -561,7 +610,7 @@ button:focus {
       width: 15px;
       height: 15px;
       background: #707070;
-    
+
       &:before {
         display: none;
       }
@@ -574,7 +623,7 @@ button:focus {
 
     @media only screen and (max-width: 768px) {
       position: static;
-      
+
       >li {
         width: 10px;
         height: 10px;
@@ -592,6 +641,9 @@ button:focus {
 
 .unactive-btn {
   pointer-events: none;
+  &:before {
+    display: none;
+  }
 }
 
 .block {

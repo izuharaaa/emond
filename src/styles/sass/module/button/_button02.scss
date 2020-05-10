@@ -2,7 +2,7 @@
   position: relative;
   display: inline-block;
   color: #fff;
-  background:#707070;
+  background: $primary;
   text-decoration: none;
   transition: all .3s ease;
   padding: 18px 80px;
@@ -32,6 +32,6 @@
   @media only screen and (max-width: $screen-tb) {
     font-size: 14px;
     padding: 10px 25px;
-    min-width: 315px;
+    width: 100%;
   }
 }

@@ -86,8 +86,7 @@ const IndexPage = () => {
       <main>
         <div className="topKeyvisual">
           <div className="videoWrap">
-            {/* <video autoplay="true" loop="true" muted="" playsinline="" preload="metadata" height="400" width="100%"> */}
-            <video autoPlay muted>
+            <video autoPlay muted loop playsinline>
               <source src={video} type="video/mp4"></source>
             </video>
           </div>
@@ -154,7 +153,7 @@ const IndexPage = () => {
             <li className="item">
               <div className="service-box">
                 <div className="service-box-content">
-                  <Link to="/apparel/" className="button01">アパレル事業</Link>
+                  <Link to="https://emondreiwa.stores.jp/" className="button01" target="_blank">アパレル事業</Link>
                 </div>
               </div>
             </li>

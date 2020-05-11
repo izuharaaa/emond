@@ -86,7 +86,7 @@ const IndexPage = () => {
       <main>
         <div className="topKeyvisual">
           <div className="videoWrap">
-            <video autoPlay muted loop playsinline>
+            <video autoPlay muted loop playsInline>
               <source src={video} type="video/mp4"></source>
             </video>
           </div>

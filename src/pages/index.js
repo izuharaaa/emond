@@ -8,6 +8,7 @@ import diamond from '../images/index/about/diamond.svg'
 import rocket from '../images/index/about/rocket.svg'
 import smile from '../images/index/about/smile.svg'
 import cross from '../images/common/cross.svg'
+import { VideoTag } from "react-video-tag"
 import video from '../video/key.mp4'
 
 import Layout from '../components/layout'
@@ -86,9 +87,7 @@ const IndexPage = () => {
       <main>
         <div className="topKeyvisual">
           <div className="videoWrap">
-            <video autoPlay muted loop playsInline>
-              <source src={video} type="video/mp4"></source>
-            </video>
+            <VideoTag src={video} autoPlay muted loop playsInline></VideoTag>
           </div>
           <div className="topBgBlack">
             <div className="topKeyvisualContainer">
@@ -143,21 +142,21 @@ const IndexPage = () => {
         </section>
         <section className="top-section service-section">
           <ul className="service-boxes">
-            <li className="item">
+            <li className="item"><Link to="/web/" className="unactive-btn"></Link>
               <div className="service-box">
                 <div className="service-box-content">
-                  <Link to="/web/" className="button01 blue unactive-btn">Webサービス</Link>
+                  <Link to="web" className="button01 blue unactive-btn">Webサービス</Link>
                 </div>
               </div>
             </li>
-            <li className="item">
+            <li className="item"><Link to="https://emondreiwa.stores.jp/" target="_blank"></Link>
               <div className="service-box">
                 <div className="service-box-content">
-                  <Link to="https://emondreiwa.stores.jp/" className="button01" target="_blank">アパレル事業</Link>
+                  <Link to="https://emondreiwa.stores.jp/" target="_blank" className="button01">アパレル事業</Link>
                 </div>
               </div>
             </li>
-            <li className="item">
+            <li className="item"><Link to="/brading/" className="button01 yellow unactive-btn"></Link>
               <div className="service-box">
                 <div className="service-box-content">
                   <Link to="/brading/" className="button01 yellow unactive-btn">飲食店ブランディング</Link>

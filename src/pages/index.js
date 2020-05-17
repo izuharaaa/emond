@@ -1,14 +1,14 @@
 import React from "react"
-import { Link } from "gatsby"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
+import { Link } from "gatsby"
+import { VideoTag } from "react-video-tag"
 import { useStaticQuery, graphql } from "gatsby"
 
 import diamond from '../images/index/about/diamond.svg'
 import rocket from '../images/index/about/rocket.svg'
 import smile from '../images/index/about/smile.svg'
 import cross from '../images/common/cross.svg'
-import { VideoTag } from "react-video-tag"
 import video from '../video/key.mp4'
 
 import Layout from '../components/layout'
@@ -83,7 +83,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="笑門道" />
+      <SEO title="笑門道" description="デザイン通じて別の可能性を作る。わたしたちは、デザインの力で人の感情を思っ切りを突き動かし、新たな価値を創造する。驚きを、喜びを、ワクワクを、企み、アイディアを形にする。もしかしたらクレイジーと言われるかもしれない。でもそんな飛び抜けたアイデアだけが本当に社会を変えていくのだと信じている。" />
       <main>
         <div className="topKeyvisual">
           <div className="videoWrap">
@@ -149,10 +149,10 @@ const IndexPage = () => {
                 </div>
               </div>
             </li>
-            <li className="item"><Link to="https://emondreiwa.stores.jp/" target="_blank"></Link>
+            <li className="item"><a href="https://emondreiwa.stores.jp/" target="_blank" rel="noopener"></a>
               <div className="service-box">
                 <div className="service-box-content">
-                  <Link to="https://emondreiwa.stores.jp/" target="_blank" className="button01">アパレル事業</Link>
+                  <a href="https://emondreiwa.stores.jp/" target="_blank" rel="noopener" className="button01">アパレル事業</a>
                 </div>
               </div>
             </li>

@@ -1,9 +1,8 @@
 import React from "react"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import { VideoTag } from "react-video-tag"
-import { useStaticQuery, graphql } from "gatsby"
 
 import diamond from '../images/index/about/diamond.svg'
 import rocket from '../images/index/about/rocket.svg'
@@ -173,7 +172,7 @@ const IndexPage = () => {
                 <div className="member-box">
                   <div className="member-box-image">
                     <Img
-                      fluid={data.member.edges[3].node.childImageSharp.fluid}
+                      fluid={data.member.edges[0].node.childImageSharp.fluid}
                       style={{ maxHeight: '200px' }}
                       alt="長門 弥"
                     />

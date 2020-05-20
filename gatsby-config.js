@@ -67,14 +67,6 @@ module.exports = {
         icon: `src/images/common/emond-icon.png`,
       },
     },
-    {
-      resolve: `@akr4/gatsby-plugin-og-image`,
-      options: {
-        siteUrl: `https://emond.jp`,
-        render: renderOgImage,
-        concurrency: 10,
-      }
-    },
     `gatsby-plugin-react-helmet`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

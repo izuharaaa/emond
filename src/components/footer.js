@@ -43,7 +43,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="center-text">
-              <button type="submit" className="button02">入力内容を確認する</button>
+              <button type="submit" className="button02">送信する</button>
             </div>
           </form>
         </div>

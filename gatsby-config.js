@@ -62,10 +62,18 @@ module.exports = {
         short_name: `Emond`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#d9006c`,
         display: `minimal-ui`,
         icon: `src/images/common/emond-icon.png`,
       },
+    },
+    {
+      resolve: `@akr4/gatsby-plugin-og-image`,
+      options: {
+        siteUrl: `https://emond.jp`,
+        render: renderOgImage,
+        concurrency: 10,
+      }
     },
     `gatsby-plugin-react-helmet`,
     // this (optional) plugin enables Progressive Web App + Offline functionality

@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const SEO = ({ description, lang, meta, title }) => {
+const SEO = ({ description, lang, meta, image, title }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -18,6 +18,11 @@ const SEO = ({ description, lang, meta, title }) => {
           siteMetadata {
             title
             description
+            author {
+              name
+              summary
+            }
+            siteUrl
           }
         }
       }
@@ -35,8 +40,32 @@ const SEO = ({ description, lang, meta, title }) => {
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
+          property: `keywords`,
+          content: `emond,笑門道,デザイナー,デザイン,webサービス,アパレル,飲食店,ブランディング,飲食店ブランディング`,
+        },
+        {
           name: `description`,
           content: metaDescription,
+        },
+        {
+          property: `author`,
+          content: `長門 弥`,
+        },
+        {
+          property: `format-detection`,
+          content: `telephone=no`,
+        },
+        {
+          property: `canonical`,
+          content: site.siteMetadata.siteUrl,
+        },
+        {
+          property: `og:locale`,
+          content: "ja_JP",
+        },
+        {
+          property: `og:url`,
+          content: site.siteMetadata.siteUrl,
         },
         {
           property: `og:title`,
@@ -45,6 +74,10 @@ const SEO = ({ description, lang, meta, title }) => {
         {
           property: `og:description`,
           content: metaDescription,
+        },
+        {
+          property: `og:image`,
+          content: `/images/common/ogp.png`,
         },
         {
           property: `og:type`,
@@ -56,7 +89,7 @@ const SEO = ({ description, lang, meta, title }) => {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `jp`,
   meta: [],
   description: ``,
 }
@@ -66,6 +99,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  // image: null,
 }
 
 export default SEO

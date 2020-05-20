@@ -36,7 +36,7 @@ class WorkPage01 extends Component {
       arrows: false,
       fade: true
     };
-  
+
     const settings02 = {
       slidesToScroll: 1,
       slidesToShow: 1,
@@ -47,7 +47,7 @@ class WorkPage01 extends Component {
       <Work>
         <SEO title="居酒屋ハッシュタグ梅田本店" />
         <main>
-          <StaticQuery 
+          <StaticQuery
             query={graphql`
               query Work01 {
                 allFile(filter: {relativeDirectory: {eq: "work/work01"}}, sort: {fields: base}) {

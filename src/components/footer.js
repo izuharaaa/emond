@@ -43,7 +43,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="center-text">
-              <button type="submit" className="button02">送信する</button>
+              <button type="submit" onClick="ga('send', 'event', 'contact', 'contact', 'contact');" className="button02">送信する</button>
             </div>
           </form>
         </div>

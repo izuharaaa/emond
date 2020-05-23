@@ -148,10 +148,10 @@ const IndexPage = () => {
                 </div>
               </div>
             </li>
-            <li className="item"><a href="https://emondreiwa.stores.jp/" target="_blank" rel="noopener noreferrer"></a>
+            <li className="item"><a href="https://emondreiwa.stores.jp/" onClick="ga('send', 'event', 'apparel', 'apparel', 'apparel_bnr');" target="_blank" rel="noopener noreferrer"></a>
               <div className="service-box">
                 <div className="service-box-content">
-                  <a href="https://emondreiwa.stores.jp/" target="_blank" rel="noopener noreferrer" className="button01">アパレル事業</a>
+                  <a href="https://emondreiwa.stores.jp/" onClick="ga('send', 'event', 'apparel', 'apparel', 'apparel_btn');" target="_blank" rel="noopener noreferrer" className="button01">アパレル事業</a>
                 </div>
               </div>
             </li>

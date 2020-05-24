@@ -16,7 +16,7 @@ const Header = () => {
   `)
 
   return (
-    <header prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/websaite#" className={headerStyles.header}>
+    <header className={headerStyles.header}>
       <div className={headerStyles.headerWrapper}>
         <h1 className={headerStyles.logo}>
           <Link to="/">

@@ -172,7 +172,7 @@ const IndexPage = () => {
                 <div className="member-box">
                   <div className="member-box-image">
                     <Img
-                      fluid={data.member.edges[3].node.childImageSharp.fluid}
+                      fluid={data.member.edges[0].node.childImageSharp.fluid}
                       style={{ maxHeight: '200px' }}
                       alt="長門 弥"
                     />
